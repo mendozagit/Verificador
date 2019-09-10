@@ -33,6 +33,7 @@ namespace Verificador
                 var prod = db.Producto.FirstOrDefault(x => x.ProductoId.Equals(TxtProductoId.Text.Trim()));
                 if (prod != null)
                 {
+                    //ok
                     TxtArticulo.Text = prod.ProductoId;
                     TxtDescripcion.Text = prod.Descripcion;
                     TxtPrecio.Text = Math.Round(prod.Precio1, 2).ToString();
