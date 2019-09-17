@@ -38,6 +38,7 @@ namespace Verificador
                     TxtDescripcion.Text = prod.Descripcion;
                     TxtPrecio.Text = Math.Round(prod.Precio1, 2).ToString();
                     TxtStock.Text = prod.Stock.ToString();
+
                 }
                 else
                 {
@@ -60,5 +61,6 @@ namespace Verificador
                 return null;
             }
         }
+
     }
 }

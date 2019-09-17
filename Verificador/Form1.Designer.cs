@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TxtProductoId = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TxtDescripcion = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -37,18 +36,9 @@
             this.TxtArticulo = new System.Windows.Forms.TextBox();
             this.TxtPrecio = new System.Windows.Forms.TextBox();
             this.TxtStock = new System.Windows.Forms.TextBox();
+            this.TxtProductoId = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // TxtProductoId
-            // 
-            this.TxtProductoId.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TxtProductoId.ForeColor = System.Drawing.Color.DimGray;
-            this.TxtProductoId.Location = new System.Drawing.Point(12, 12);
-            this.TxtProductoId.Name = "TxtProductoId";
-            this.TxtProductoId.Size = new System.Drawing.Size(261, 29);
-            this.TxtProductoId.TabIndex = 0;
-            this.TxtProductoId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtProductoId_KeyDown);
             // 
             // pictureBox1
             // 
@@ -62,7 +52,7 @@
             // 
             this.TxtDescripcion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtDescripcion.Enabled = false;
-            this.TxtDescripcion.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtDescripcion.ForeColor = System.Drawing.Color.Black;
             this.TxtDescripcion.Location = new System.Drawing.Point(279, 12);
             this.TxtDescripcion.Multiline = true;
             this.TxtDescripcion.Name = "TxtDescripcion";
@@ -107,9 +97,10 @@
             // 
             this.TxtArticulo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TxtArticulo.Enabled = false;
-            this.TxtArticulo.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtArticulo.ForeColor = System.Drawing.Color.Black;
             this.TxtArticulo.Location = new System.Drawing.Point(452, 145);
             this.TxtArticulo.Name = "TxtArticulo";
+            this.TxtArticulo.ReadOnly = true;
             this.TxtArticulo.Size = new System.Drawing.Size(385, 29);
             this.TxtArticulo.TabIndex = 7;
             this.TxtArticulo.TabStop = false;
@@ -117,10 +108,10 @@
             // TxtPrecio
             // 
             this.TxtPrecio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TxtPrecio.Enabled = false;
-            this.TxtPrecio.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtPrecio.ForeColor = System.Drawing.Color.Black;
             this.TxtPrecio.Location = new System.Drawing.Point(452, 180);
             this.TxtPrecio.Name = "TxtPrecio";
+            this.TxtPrecio.ReadOnly = true;
             this.TxtPrecio.Size = new System.Drawing.Size(385, 29);
             this.TxtPrecio.TabIndex = 8;
             this.TxtPrecio.TabStop = false;
@@ -128,19 +119,28 @@
             // TxtStock
             // 
             this.TxtStock.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TxtStock.Enabled = false;
-            this.TxtStock.ForeColor = System.Drawing.Color.DimGray;
+            this.TxtStock.ForeColor = System.Drawing.Color.Black;
             this.TxtStock.Location = new System.Drawing.Point(452, 215);
             this.TxtStock.Name = "TxtStock";
+            this.TxtStock.ReadOnly = true;
             this.TxtStock.Size = new System.Drawing.Size(385, 29);
             this.TxtStock.TabIndex = 9;
             this.TxtStock.TabStop = false;
+            // 
+            // TxtProductoId
+            // 
+            this.TxtProductoId.Location = new System.Drawing.Point(12, 12);
+            this.TxtProductoId.Name = "TxtProductoId";
+            this.TxtProductoId.Size = new System.Drawing.Size(261, 29);
+            this.TxtProductoId.TabIndex = 10;
+            this.TxtProductoId.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtProductoId_KeyDown);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 258);
+            this.Controls.Add(this.TxtProductoId);
             this.Controls.Add(this.TxtStock);
             this.Controls.Add(this.TxtPrecio);
             this.Controls.Add(this.TxtArticulo);
@@ -149,10 +149,8 @@
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.TxtDescripcion);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.TxtProductoId);
-            this.Enabled = false;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VERIFICADOR DE PRECIOS DYM";
@@ -163,8 +161,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox TxtProductoId;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox TxtDescripcion;
         private System.Windows.Forms.TextBox textBox4;
@@ -173,6 +169,7 @@
         private System.Windows.Forms.TextBox TxtArticulo;
         private System.Windows.Forms.TextBox TxtPrecio;
         private System.Windows.Forms.TextBox TxtStock;
+        private System.Windows.Forms.TextBox TxtProductoId;
     }
 }
 
