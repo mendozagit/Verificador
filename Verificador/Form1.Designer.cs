@@ -96,7 +96,6 @@
             // TxtArticulo
             // 
             this.TxtArticulo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TxtArticulo.Enabled = false;
             this.TxtArticulo.ForeColor = System.Drawing.Color.Black;
             this.TxtArticulo.Location = new System.Drawing.Point(452, 145);
             this.TxtArticulo.Name = "TxtArticulo";
@@ -154,6 +153,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VERIFICADOR DE PRECIOS DYM";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
