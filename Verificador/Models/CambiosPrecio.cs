@@ -29,6 +29,14 @@ namespace Verificador.Models
         public string CreatedBy { get; set; }
         public string Estado { get; set; }
         public int CompraId { get; set; }
+        public DateTime? DeletedAt { get; set; }
+        public string DeletedBy { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+        public string UpdatedBy { get; set; }
+        public bool? GridEntradaXcompra { get; set; }
+        public string Observacion { get; set; }
+        public decimal PrecioCajaNuevo { get; set; }
+        public decimal PrecioCajaViejo { get; set; }
 
         public virtual Usuario CreatedByNavigation { get; set; }
         public virtual Producto Producto { get; set; }

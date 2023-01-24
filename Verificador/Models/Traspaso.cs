@@ -29,7 +29,12 @@ namespace Verificador.Models
         public decimal Impuesto { get; set; }
         public decimal Subtotal { get; set; }
         public decimal Total { get; set; }
+        public DateTime? DeletedAt { get; set; }
+        public string DeletedBy { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+        public string UpdatedBy { get; set; }
 
+        public virtual Usuario CreatedByNavigation { get; set; }
         public virtual Sucursal SucursalDestino { get; set; }
         public virtual Sucursal SucursalOrigen { get; set; }
         public virtual ICollection<Traspasop> Traspasop { get; set; }

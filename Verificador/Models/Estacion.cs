@@ -7,8 +7,11 @@ namespace Verificador.Models
     {
         public Estacion()
         {
+            CierreInventario = new HashSet<CierreInventario>();
             Compra = new HashSet<Compra>();
             Corte = new HashSet<Corte>();
+            Flujo = new HashSet<Flujo>();
+            Inventario = new HashSet<Inventario>();
             Venta = new HashSet<Venta>();
         }
 
@@ -26,9 +29,23 @@ namespace Verificador.Models
         public int TantosT { get; set; }
         public int TantosF { get; set; }
         public int TantosNc { get; set; }
+        public int? RangoVistaReimpresiones { get; set; }
+        public string ImpresoraC { get; set; }
+        public int TantosC { get; set; }
+        public string ImpresoraA { get; set; }
+        public int TantosA { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public string CreatedBy { get; set; }
+        public DateTime? DeletedAt { get; set; }
+        public string DeletedBy { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+        public string UpdatedBy { get; set; }
 
+        public virtual ICollection<CierreInventario> CierreInventario { get; set; }
         public virtual ICollection<Compra> Compra { get; set; }
         public virtual ICollection<Corte> Corte { get; set; }
+        public virtual ICollection<Flujo> Flujo { get; set; }
+        public virtual ICollection<Inventario> Inventario { get; set; }
         public virtual ICollection<Venta> Venta { get; set; }
     }
 }

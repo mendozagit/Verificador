@@ -17,6 +17,10 @@ namespace Verificador.Models
         public string UpdatedBy { get; set; }
         public string ResetedBy { get; set; }
         public bool IsDeleted { get; set; }
+        public string AbonadoRetirado { get; set; }
+        public DateTime? DeletedAt { get; set; }
+        public string DeletedBy { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
         public virtual Cliente Cliente { get; set; }
         public virtual Venta Venta { get; set; }

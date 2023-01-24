@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,8 +43,9 @@ namespace Verificador
                     TxtArticulo.Text = prod.ProductoId;
                     TxtDescripcion.Text = prod.Descripcion;
                     TxtPrecio.Text = GetPrecioSalida(prod.Precio1.ToString(), impuestos);
-                    TxtStock.Text = prod.Stock.ToString();
-
+                    pictureBox1.Image = GetImg(prod.RutaImg);
+                    //   TxtStock.Text = prod.Stock > 0 ? "SI" : "NO";
+                    ClearAndFocus();
                 }
                 else
                 {
@@ -52,38 +54,60 @@ namespace Verificador
                 }
             }
         }
+
+        private void ClearAndFocus()
+        {
+            TxtProductoId.Text = string.Empty;
+            TxtProductoId.Focus();
+        }
+
         private void Limpiar()
         {
             TxtDescripcion.Text = "";
             TxtArticulo.Text = "";
-            TxtStock.Text = "";
+            //TxtStock.Text = "";
             TxtPrecio.Text = "";
             pictureBox1.Image = null;
+            ClearAndFocus();
         }
+
         public static string GetPrecioSalida(string nPrecio, ICollection<Impuesto> impuestos)
         {
             decimal precio = 0M, acumulado = 0M;
             try
             {
-                if (decimal.TryParse(nPrecio, out precio) && impuestos.Count > 0)
-                    foreach (var i in impuestos)
-                        acumulado += precio * i.Tasa;
+
+                if (decimal.TryParse(nPrecio, out precio))
+                {
+
+                    foreach (var impuesto in impuestos)
+                    {
+                        acumulado += precio * impuesto.Tasa;
+                    }
+
+
+                }
                 else
-                    return "$1.00";
+                    return "DESCONOCIDO";
             }
             catch (Exception)
             {
-
                 MessageBox.Show("Algo salio mal precio y/o margen invalidos");
             }
+
             return ((precio + acumulado).ToString("C"));
         }
+
         private Image GetImg(string ruta)
         {
             try
             {
                 if (ruta == null)
                     return null;
+
+                if (!File.Exists(ruta))
+                    return null;
+
 
                 Image img = Image.FromFile(ruta);
                 return img;
@@ -98,17 +122,17 @@ namespace Verificador
         {
             CheckConnection();
         }
+
         private void CheckConnection()
         {
-
             using (var db = new DymContext())
             {
                 db.Producto.FirstOrDefault();
             }
         }
+
         private void CargaListaImpuestos(Producto producto)
         {
-
             impuestos = new List<Impuesto>();
 
             ImpuestoController impuestoController = new ImpuestoController();

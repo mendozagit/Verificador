@@ -16,6 +16,12 @@ namespace Verificador.Models
         public string Descripcion { get; set; }
         public string Retencion { get; set; }
         public string Traslado { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public string CreatedBy { get; set; }
+        public DateTime? DeletedAt { get; set; }
+        public string DeletedBy { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+        public string UpdatedBy { get; set; }
 
         public virtual ICollection<Impuesto> Impuesto { get; set; }
         public virtual ICollection<Ventap> VentapClaveImpuesto1Navigation { get; set; }

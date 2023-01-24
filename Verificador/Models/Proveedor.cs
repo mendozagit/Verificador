@@ -9,6 +9,7 @@ namespace Verificador.Models
         {
             Cxp = new HashSet<Cxp>();
             Cxpp = new HashSet<Cxpp>();
+            ProductoProveedor = new HashSet<ProductoProveedor>();
         }
 
         public string ProveedorId { get; set; }
@@ -30,8 +31,15 @@ namespace Verificador.Models
         public bool IsDeleted { get; set; }
         public string Colonia { get; set; }
         public string Correo { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public string CreatedBy { get; set; }
+        public DateTime? DeletedAt { get; set; }
+        public string DeletedBy { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+        public string UpdatedBy { get; set; }
 
         public virtual ICollection<Cxp> Cxp { get; set; }
         public virtual ICollection<Cxpp> Cxpp { get; set; }
+        public virtual ICollection<ProductoProveedor> ProductoProveedor { get; set; }
     }
 }

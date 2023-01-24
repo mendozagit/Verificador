@@ -98,6 +98,7 @@
       <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlClient, Version=4.5.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SqlClient.4.6.1\lib\net461\System.Data.SqlClient.dll</HintPath>
@@ -130,24 +131,39 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ImpuestoController.cs" />
+    <Compile Include="DataHelper.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Actualizacion.cs" />
+    <Compile Include="Models\Almacen.cs" />
+    <Compile Include="Models\AuditUpdate.cs" />
+    <Compile Include="Models\Banco.cs" />
     <Compile Include="Models\CAduana.cs" />
     <Compile Include="Models\CambiosPrecio.cs" />
+    <Compile Include="Models\CardDeletionHistories.cs" />
+    <Compile Include="Models\CardRoles.cs" />
+    <Compile Include="Models\Cards.cs" />
+    <Compile Include="Models\CardTransactions.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\CCaducidadfolios.cs" />
     <Compile Include="Models\CClaveProdServ.cs" />
     <Compile Include="Models\CClaveunidad.cs" />
+    <Compile Include="Models\CentroCosto.cs" />
+    <Compile Include="Models\Cexportacion.cs" />
     <Compile Include="Models\CFormapago.cs" />
+    <Compile Include="Models\CierreInventario.cs" />
+    <Compile Include="Models\CierreInventariop.cs" />
     <Compile Include="Models\CImpuesto.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Cmeses.cs" />
     <Compile Include="Models\CMetodopago.cs" />
     <Compile Include="Models\CMoneda.cs" />
     <Compile Include="Models\CNumpedimentoaduana.cs" />
+    <Compile Include="Models\CobjetoImp.cs" />
     <Compile Include="Models\Compra.cs" />
     <Compile Include="Models\Comprap.cs" />
     <Compile Include="Models\ConceptoEgreso.cs" />
@@ -158,6 +174,7 @@
     <Compile Include="Models\Corte.cs" />
     <Compile Include="Models\Cp.cs" />
     <Compile Include="Models\CPatenteaduanal.cs" />
+    <Compile Include="Models\Cperiodicidad.cs" />
     <Compile Include="Models\CRegimenfiscal.cs" />
     <Compile Include="Models\CTasaocuota.cs" />
     <Compile Include="Models\CTipodecomprobante.cs" />
@@ -165,42 +182,89 @@
     <Compile Include="Models\CTiporelacion.cs" />
     <Compile Include="Models\CUsocfdi.cs" />
     <Compile Include="Models\Cxc.cs" />
+    <Compile Include="Models\Cxcdr.cs" />
     <Compile Include="Models\Cxcp.cs" />
     <Compile Include="Models\Cxp.cs" />
     <Compile Include="Models\Cxpp.cs" />
+    <Compile Include="Models\Devolucion.cs" />
+    <Compile Include="Models\Devolucionp.cs" />
     <Compile Include="Models\DymContext.cs" />
+    <Compile Include="Models\DymError.cs" />
+    <Compile Include="Models\EmailRecords.cs" />
     <Compile Include="Models\Empresa.cs" />
     <Compile Include="Models\Estacion.cs" />
     <Compile Include="Models\Estado.cs" />
     <Compile Include="Models\EstadoDoc.cs" />
+    <Compile Include="Models\Event.cs" />
     <Compile Include="Models\Flujo.cs" />
     <Compile Include="Models\FormaPago.cs" />
     <Compile Include="Models\Impuesto.cs" />
+    <Compile Include="Models\Informe.cs" />
+    <Compile Include="Models\InformeCategoria.cs" />
+    <Compile Include="Models\InformeConfiguracion.cs" />
+    <Compile Include="Models\InformeParametro.cs" />
+    <Compile Include="Models\Inventario.cs" />
+    <Compile Include="Models\Inventariop.cs" />
+    <Compile Include="Models\Job.cs" />
+    <Compile Include="Models\Jobp.cs" />
+    <Compile Include="Models\Jobs.cs" />
+    <Compile Include="Models\Kardex.cs" />
     <Compile Include="Models\Laboratorio.cs" />
+    <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Lote.cs" />
+    <Compile Include="Models\LoteVentap.cs" />
+    <Compile Include="Models\Lxc.cs" />
+    <Compile Include="Models\LxcDocument.cs" />
+    <Compile Include="Models\MergeTemplates.cs" />
+    <Compile Include="Models\Messages.cs" />
+    <Compile Include="Models\MessageUsers.cs" />
+    <Compile Include="Models\MigrationField.cs" />
+    <Compile Include="Models\MigrationTable.cs" />
+    <Compile Include="Models\Moneda.cs" />
+    <Compile Include="Models\MotivoCancelacion.cs" />
     <Compile Include="Models\MovInv.cs" />
     <Compile Include="Models\Municipio.cs" />
     <Compile Include="Models\Pais.cs" />
     <Compile Include="Models\Permiso.cs" />
+    <Compile Include="Models\Persona.cs" />
     <Compile Include="Models\Presentacion.cs" />
     <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\ProductoAlmacen.cs" />
+    <Compile Include="Models\ProductoProveedor.cs" />
     <Compile Include="Models\ProductoSustancia.cs" />
+    <Compile Include="Models\ProductoUbicacion.cs" />
     <Compile Include="Models\Proveedor.cs" />
     <Compile Include="Models\Punto.cs" />
     <Compile Include="Models\PuntoConfig.cs" />
     <Compile Include="Models\Query.cs" />
+    <Compile Include="Models\Reporte.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\RolePermiso.cs" />
+    <Compile Include="Models\SatExecutionType.cs" />
+    <Compile Include="Models\SatFile.cs" />
+    <Compile Include="Models\SatOrder.cs" />
+    <Compile Include="Models\SatPackage.cs" />
+    <Compile Include="Models\SatRequest.cs" />
+    <Compile Include="Models\SatResponse.cs" />
+    <Compile Include="Models\SatXml.cs" />
+    <Compile Include="Models\SatXmlItem.cs" />
+    <Compile Include="Models\Sector.cs" />
     <Compile Include="Models\Sucursal.cs" />
     <Compile Include="Models\Sustancia.cs" />
+    <Compile Include="Models\Test.cs" />
     <Compile Include="Models\TipoDoc.cs" />
+    <Compile Include="Models\TipoInventario.cs" />
     <Compile Include="Models\Traspaso.cs" />
     <Compile Include="Models\Traspasop.cs" />
+    <Compile Include="Models\Ubicacion.cs" />
     <Compile Include="Models\UnidadMedida.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuarioRole.cs" />
     <Compile Include="Models\Venta.cs" />
+    <Compile Include="Models\VentaImpuesto.cs" />
     <Compile Include="Models\Ventap.cs" />
+    <Compile Include="Models\VentapImpuesto.cs" />
+    <Compile Include="Models\Vlu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

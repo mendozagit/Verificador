@@ -15,5 +15,11 @@ namespace Verificador.Models
         public string Retención { get; set; }
         public string FechaInicioDeVigencia { get; set; }
         public string FechaFinDeVigencia { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public string CreatedBy { get; set; }
+        public DateTime? DeletedAt { get; set; }
+        public string DeletedBy { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+        public string UpdatedBy { get; set; }
     }
 }

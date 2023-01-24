@@ -3,9 +3,15 @@ using System.Collections.Generic;
 
 namespace Verificador.Models
 {
-    public partial class CTiporelacion
+    public partial class Ctiporelacion
     {
-        public string TipoRelacionId { get; set; }
-        public string Descripción { get; set; }
+        public string CtiporelacionId { get; set; }
+        public string CreatedBy { get; set; }
+        public string UpdatedBy { get; set; }
+        public string DeletedBy { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+        public DateTime? DeletedAt { get; set; }
+        public string Descripcion { get; set; }
     }
 }

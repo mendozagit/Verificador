@@ -8,8 +8,12 @@ namespace Verificador.Models
         public Producto()
         {
             CambiosPrecio = new HashSet<CambiosPrecio>();
+            CierreInventariop = new HashSet<CierreInventariop>();
             Lote = new HashSet<Lote>();
+            ProductoAlmacen = new HashSet<ProductoAlmacen>();
+            ProductoProveedor = new HashSet<ProductoProveedor>();
             ProductoSustancia = new HashSet<ProductoSustancia>();
+            ProductoUbicacion = new HashSet<ProductoUbicacion>();
         }
 
         public string ProductoId { get; set; }
@@ -21,6 +25,9 @@ namespace Verificador.Models
         public decimal Stock { get; set; }
         public decimal PrecioCompra { get; set; }
         public decimal PrecioCaja { get; set; }
+        public decimal Costopp { get; set; }
+        public decimal UltimoCosto { get; set; }
+        public decimal ValorStock { get; set; }
         public decimal Precio1 { get; set; }
         public decimal Precio2 { get; set; }
         public decimal Precio3 { get; set; }
@@ -43,12 +50,16 @@ namespace Verificador.Models
         public string Contenido { get; set; }
         public string RutaImg { get; set; }
         public bool ChkCaducidad { get; set; }
-        public int DiasCredito { get; set; }
         public string Impuesto1Id { get; set; }
         public string Impuesto2Id { get; set; }
         public string Impuesto3Id { get; set; }
         public string AlmacenId { get; set; }
         public bool? Ocupado { get; set; }
+        public decimal Min { get; set; }
+        public decimal Max { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public string CreatedBy { get; set; }
+        public DateTime? DeletedAt { get; set; }
 
         public virtual Categoria Categoria { get; set; }
         public virtual Impuesto Impuesto1 { get; set; }
@@ -58,7 +69,11 @@ namespace Verificador.Models
         public virtual Presentacion Presentacion { get; set; }
         public virtual UnidadMedida UnidadMedida { get; set; }
         public virtual ICollection<CambiosPrecio> CambiosPrecio { get; set; }
+        public virtual ICollection<CierreInventariop> CierreInventariop { get; set; }
         public virtual ICollection<Lote> Lote { get; set; }
+        public virtual ICollection<ProductoAlmacen> ProductoAlmacen { get; set; }
+        public virtual ICollection<ProductoProveedor> ProductoProveedor { get; set; }
         public virtual ICollection<ProductoSustancia> ProductoSustancia { get; set; }
+        public virtual ICollection<ProductoUbicacion> ProductoUbicacion { get; set; }
     }
 }

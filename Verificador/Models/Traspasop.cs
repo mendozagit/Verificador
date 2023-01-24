@@ -23,6 +23,12 @@ namespace Verificador.Models
         public decimal ImporteImpuesto2 { get; set; }
         public decimal Subtotal { get; set; }
         public decimal Total { get; set; }
+        public DateTime? CreatedAt { get; set; }
+        public string CreatedBy { get; set; }
+        public DateTime? DeletedAt { get; set; }
+        public string DeletedBy { get; set; }
+        public DateTime? UpdatedAt { get; set; }
+        public string UpdatedBy { get; set; }
 
         public virtual Traspaso Traspaso { get; set; }
     }
