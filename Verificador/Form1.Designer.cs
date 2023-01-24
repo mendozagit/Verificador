@@ -63,11 +63,11 @@
             // textBox4
             // 
             this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox4.Location = new System.Drawing.Point(279, 187);
+            this.textBox4.Location = new System.Drawing.Point(279, 196);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(167, 40);
+            this.textBox4.Size = new System.Drawing.Size(167, 38);
             this.textBox4.TabIndex = 4;
             this.textBox4.TabStop = false;
             this.textBox4.Text = "PRECIO";
@@ -99,12 +99,12 @@
             // TxtPrecio
             // 
             this.TxtPrecio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.TxtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtPrecio.ForeColor = System.Drawing.Color.Black;
             this.TxtPrecio.Location = new System.Drawing.Point(452, 187);
             this.TxtPrecio.Name = "TxtPrecio";
             this.TxtPrecio.ReadOnly = true;
-            this.TxtPrecio.Size = new System.Drawing.Size(385, 40);
+            this.TxtPrecio.Size = new System.Drawing.Size(385, 49);
             this.TxtPrecio.TabIndex = 8;
             this.TxtPrecio.TabStop = false;
             // 
@@ -120,7 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(849, 239);
+            this.ClientSize = new System.Drawing.Size(852, 241);
             this.Controls.Add(this.TxtProductoId);
             this.Controls.Add(this.TxtPrecio);
             this.Controls.Add(this.TxtArticulo);
